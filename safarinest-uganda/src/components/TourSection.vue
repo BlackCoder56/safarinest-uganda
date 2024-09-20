@@ -42,8 +42,8 @@
         </div>
 
          <!-- Example Tour 4 -->
-         <div class="tour-card">
-          <img src="@/assets/kabale.jpg" alt="Bwindi Impenetrable Forest">
+         <div class="tour-card last-card">
+          <img src="@/assets/kibale.jpg" alt="Bwindi Impenetrable Forest">
           <div class="tour-info">
             <h3>Kibale National Park</h3>
             <p>
@@ -161,18 +161,33 @@
     .tour-places {
       flex-direction: column;
       align-items: center;
-    }
+      padding: 20px 0;
+    }    
 
     .tour-card {
       width: 250px;
       margin-bottom: 50px;
   }
 
+  .last-card{
+    margin-bottom: 0px;
+  }
+  
+
   .tour-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
   }
+
+  .tour-info h3 {
+    font-size: 20px;
+  }
+  
+  .tour-info p {
+    font-size: 12px;
+  }
+
   }
   </style>
   
