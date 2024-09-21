@@ -4,6 +4,7 @@
     <AboutSection />
     <ServiceSection />
     <TourSection />
+    <ContactCompo />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import HomeCompo from '@/components/HomeCompo.vue';
 import AboutSection from '@/components/AboutSection.vue';
 import ServiceSection from '@/components/ServiceSection.vue';
 import TourSection from '@/components/TourSection.vue';
+import ContactCompo from '@/components/ContactCompo.vue';
 
 export default {
   components: {
@@ -19,6 +21,7 @@ export default {
     AboutSection,
     ServiceSection,
     TourSection,
+    ContactCompo,
   },
 };
 </script>

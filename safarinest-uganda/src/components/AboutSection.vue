@@ -67,8 +67,14 @@
   border-radius: 10px;
 }
 
+@media (min-width:800px)  { 
+  .about-content {
+    padding: 20px;
+}
+}
+
 /* Media query for larger screens - desktop */
-@media (min-width: 768px) {
+@media (min-width: 961px) {
   .about-content {
     flex-direction: row;
     align-items: flex-start;

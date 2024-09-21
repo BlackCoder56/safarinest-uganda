@@ -18,7 +18,7 @@
         </div>
   
         <!-- Example Tour 2 -->
-        <div class="tour-card">
+        <div class="tour-card tablet">
           <img src="@/assets/bwindi.jpg" alt="Bwindi Impenetrable Forest">
           <div class="tour-info">
             <h3>Bwindi Impenetrable Forest</h3>
@@ -87,7 +87,6 @@
   .overlay {
     background: rgba(0, 0, 0, 0.4);
     padding: 50px;
-    margin-bottom: 50px;
     height: 100%;
   }
   
@@ -150,9 +149,51 @@
   button:hover {
     background-color: #FFD700;
   }
+
+  /* Tablet view */
+  @media (min-width:769px), (max-width:961px)  { 
+        /* .tablet, .last-card{
+          display: none;
+        } */
+
+        .tours {  
+    height: auto;    
+  }  
+
+    .tour-places {
+      /* flex-direction: column; */
+      align-items: center;
+      padding: 20px 0;
+    }    
+
+    .tour-card {
+      width: 250px;
+      margin-bottom: 50px;
+  }
+
+  .last-card{
+    margin-bottom: 0px;
+  }
   
+
+  .tour-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .tour-info h3 {
+    font-size: 20px;
+  }
+  
+  .tour-info p {
+    font-size: 12px;
+  }
+        
+  }
+    
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (max-width: 769px) {
 
     .tours {  
     height: auto;    
