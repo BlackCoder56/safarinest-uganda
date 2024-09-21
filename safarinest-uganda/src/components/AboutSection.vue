@@ -6,7 +6,7 @@
         <h2>Discover Uganda's Wildlife</h2>
         <p>
           Uganda is home to some of the most breathtaking wildlife and natural landscapes in the world. 
-          From the rolling savannas of <strong><i>Elizabeth National Park</i></strong> to the misty mountains where gorillas roam, 
+          From the rolling savannas of <strong>Elizabeth National Park</strong> to the misty mountains where gorillas roam, 
           our tours take you closer to nature. Experience the call of the wild, witness majestic elephants, 
           lions, and a variety of bird species in their natural habitat. Whether you're an adventurer or 
           nature lover, Uganda has something magical for everyone.
