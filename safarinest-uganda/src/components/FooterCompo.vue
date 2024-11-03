@@ -88,7 +88,7 @@
     data() {
       return {
         currentYear: new Date().getFullYear(),
-        companyName: 'SafariNest Uganda' // Replace with dynamic company name if needed
+        companyName: 'SafariNest Uganda' 
       };
     }
   };

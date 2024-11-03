@@ -19,21 +19,23 @@
       <!-- Navigation links in fullscreen when opened -->
       <div class="collapse navbar-collapse fullscreen-menu" :class="{ open: navbarOpen }" id="navbarNav">
         <!-- X Icon for closing the menu, appears at the top -->
-        <div v-if="navbarOpen" class="close-menu" @click="closeNavbar">X</div>
+        <div v-if="navbarOpen" class="close-menu" @click="closeNavbar">
+          &times;
+        </div>
 
         <!-- Navigation links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/" @click="closeNavbar">Home</a>
+          <li class="nav-item ">
+            <a class="nav-link" href="/" @click=" closeNavbar">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/" @click="closeNavbar">About</a>
+            <a class="nav-link" href="/about" @click="closeNavbar">About</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="#services" @click="closeNavbar">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#tours" @click="closeNavbar">Tours</a>
+            <a class="nav-link" href="/tours" @click="closeNavbar">Tours</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#accommodations" @click="closeNavbar">Accommodations</a>
@@ -63,7 +65,7 @@ export default {
       this.navbarOpen = !this.navbarOpen;
     },
     closeNavbar() {
-      this.navbarOpen = false; // Close the navbar when a link is clicked or when "X" is clicked
+      this.navbarOpen = false; 
     }
   }
 };
@@ -77,7 +79,9 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   min-height: 80px;
 }
-
+.nav-item.active{
+  color: #FFD700;
+}
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -155,11 +159,12 @@ export default {
 .close-menu {
   position: absolute;
   top: 20px;
-  right: 30px;
-  font-size: 36px;
+  right: 50px;
+  font-size: 50px;
   color: #F5F5F5; /* Light gray */
   cursor: pointer;
 }
+
 
 /* For desktop screens */
 @media (min-width: 992px) {
