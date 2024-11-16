@@ -2,14 +2,13 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <!-- Logo -->
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img src="@/assets/logo.jpg" alt="SafariNest Logo" class="navbar-logo">
-        <span>SafariNest Uganda</span>
+        <span class="brand-name">SafariNest Uganda</span>
       </a>
 
       <!-- Toggler button for mobile view -->
       <button class="navbar-toggler" type="button" @click="toggleNavbar">
-        <!-- Toggler icon should toggle between the hamburger and X icon -->
         <span v-if="navbarOpen" class="navbar-toggler-icon" @click="closeNavbar">
           <span class="close-icon">X</span>
         </span>
@@ -19,32 +18,30 @@
       <!-- Navigation links in fullscreen when opened -->
       <div class="collapse navbar-collapse fullscreen-menu" :class="{ open: navbarOpen }" id="navbarNav">
         <!-- X Icon for closing the menu, appears at the top -->
-        <div v-if="navbarOpen" class="close-menu" @click="closeNavbar">
-          &times;
-        </div>
+        <div v-if="navbarOpen" class="close-menu" @click="closeNavbar">&times;</div>
 
         <!-- Navigation links -->
         <ul class="navbar-nav">
-          <li class="nav-item ">
-            <a class="nav-link" href="/" @click=" closeNavbar">Home</a>
+          <li class="nav-item">
+            <a :class="getLinkClass('/')" href="/" @click="closeNavbar">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about" @click="closeNavbar">About</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#services" @click="closeNavbar">Services</a>
+            <a :class="getLinkClass('/about')" href="/about" @click="closeNavbar">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/tours" @click="closeNavbar">Tours</a>
+            <a :class="getLinkClass('/services')" href="/services" @click="closeNavbar">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#accommodations" @click="closeNavbar">Accommodations</a>
+            <a :class="getLinkClass('/tours')" href="/tours" @click="closeNavbar">Tours</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#book" @click="closeNavbar"><strong>Book</strong></a>
+            <a :class="getLinkClass('#accommodations')" href="#accommodations" @click="closeNavbar">Accommodations</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact" @click="closeNavbar">Contact</a>
+            <a :class="getLinkClass('#book')" href="#book" @click="closeNavbar"><strong>Book</strong></a>
+          </li>
+          <li class="nav-item">
+            <a :class="getLinkClass('#contact')" href="#contact" @click="closeNavbar">Contact</a>
           </li>
         </ul>
       </div>
@@ -53,7 +50,6 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -65,9 +61,13 @@ export default {
       this.navbarOpen = !this.navbarOpen;
     },
     closeNavbar() {
-      this.navbarOpen = false; 
-    }
-  }
+      this.navbarOpen = false;
+    },
+    getLinkClass(path) {
+      // Check if the current path matches the link's href
+      return window.location.pathname === path ? 'nav-link active' : 'nav-link';
+    },
+  },
 };
 </script>
 
@@ -79,12 +79,13 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   min-height: 80px;
 }
-.nav-item.active{
-  color: #FFD700;
-}
 .navbar-brand {
   display: flex;
   align-items: center;
+  color: #F5F5F5; /* Brand text color */
+}
+
+.navbar-brand:hover { 
   color: #F5F5F5; /* Brand text color */
 }
 
@@ -99,10 +100,18 @@ export default {
 /* Styling for Nav links */
 .navbar-nav .nav-link {
   color: #F5F5F5;
+  padding-bottom: 5px;
+  transition: color 0.3s, border-bottom 0.3s;
 }
 
 .navbar-nav .nav-link:hover {
   color: #FFD700; /* Golden Yellow on hover */
+}
+
+/* Active link style */
+.navbar-nav .nav-link.active {
+  color: #FFD700; /* Active link color */
+  border-bottom: 2px solid #FFD700; /* Adds an underline */
 }
 
 /* Full-Screen Toggle Menu for Small Screens */
@@ -129,7 +138,6 @@ export default {
   opacity: 1;
   transform: translateY(0); /* Slide back to the original position */
 }
-
 
 /* Center the nav items */
 .navbar-nav {
@@ -164,7 +172,6 @@ export default {
   color: #F5F5F5; /* Light gray */
   cursor: pointer;
 }
-
 
 /* For desktop screens */
 @media (min-width: 992px) {

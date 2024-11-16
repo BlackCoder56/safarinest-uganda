@@ -1,8 +1,7 @@
 <template>
     <NavbarCompo />    
     <div class="ts">
-        <h2>About us</h2>
-        <AboutSection />
+        <ServiceSection />
     </div>    
     <FooterCompo />
 </template>
@@ -10,13 +9,13 @@
 
 <script>
     import NavbarCompo from '@/components/NavbarCompo.vue';
-    import AboutSection from '@/components/AboutSection.vue';
+    import ServiceSection from '@/components/ServiceSection.vue';
     import FooterCompo from '@/components/FooterCompo.vue';
 
     export default{
         components: {
             NavbarCompo,
-            AboutSection,
+            ServiceSection,
             FooterCompo,
         }
     }
@@ -24,7 +23,7 @@
 
 <style scoped>
     .ts{
-        margin-top:6%;
+        margin-top:4%;
     }
 </style>
 

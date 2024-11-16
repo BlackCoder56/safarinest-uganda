@@ -1,9 +1,7 @@
 <template>
     <NavbarCompo />
     <div class="ts">
-        <h2>About us</h2>
         <TourSection />
-
     </div>    
     <FooterCompo />
 </template>
@@ -25,8 +23,14 @@
 
 <style scoped>
     .ts{
-        margin-top: 5%;
+        margin-top: 4%;
         height: 79vh;    
     }
+
+    /* @media (max-width: 769px) {
+        .ts{
+
+        }
+    } */
 </style>
 
